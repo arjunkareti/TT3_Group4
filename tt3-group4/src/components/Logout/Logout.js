@@ -1,6 +1,9 @@
 import '../../App.css';
 import React from 'react';
 
+import { NavLink } from 'react-router-dom';
+
+
 export default class PersonDelete extends React.Component {
     handleChange = event =>{
        
@@ -16,8 +19,7 @@ export default class PersonDelete extends React.Component {
         <form onSubmit={this.handleSubmit}>
             
                 <h1>Successfully logged out</h1>
-                <button type="button" class="btn btn-secondary btn-lg">Login</button>
-            
+                <button type="button" class="btn btn-secondary btn-lg"><NavLink className="nav-link" activeClassName="active" to = "/">Login</NavLink></button>
         </form>
         ) 
         
