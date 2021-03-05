@@ -47,9 +47,9 @@ class ViewCurrentPrice extends React.Component{
         const body = {
         }
     
-        axios.post('https://849rs099m3.execute-api.ap-southeast-1.amazonaws.com/techtrek/pricing/current', body, axiosConfig)
+        axios.post('https://849rs099m3.execute-api.ap-southeast-1.amazonaws.com/techtrek/pricing/current', {}, axiosConfig)
         .then( ({data}) => {
-            data.json()
+            console.log(data)
         })
         .then(data =>
             this.setState({

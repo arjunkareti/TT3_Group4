@@ -15,6 +15,7 @@ function App() {
     <Router>
       <div className="App">
         <NavBar />
+        {/* <ViewCurrentPrice /> */}
         <Switch>
           <Route  exact path="/CashAssets" component={CashAssets}></Route>
           <Route  exact path="/TransactionHistory" component={TransactionHistory}></Route>

@@ -55,11 +55,6 @@ export default class UserInfor extends Component{
                     <td>{phoneNumber}</td>
                     <td>{email}</td>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                </tr>
-
             </table>
         )
     }

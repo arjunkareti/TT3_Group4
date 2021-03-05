@@ -24,7 +24,7 @@ const TransactionHistory = props => {
 
     axios.post('https://849rs099m3.execute-api.ap-southeast-1.amazonaws.com/techtrek/transactions/view', body, axiosConfig)
       .then( ({data}) => {
-        console.log(data)
+        console.log('Transaction history',data)
         setTransactionHistory(data)
       })
   }, [])
@@ -52,7 +52,6 @@ const TransactionHistory = props => {
             return (
               <tr key={transaction.transactionId}>
                 <td>{transaction.transactionId}</td>
-                {/* <td>{transaction.timestamp}</td> */}
                 <td>{date}</td>
                 <td>{transaction.assetSymbol}</td>
                 <td>{transaction.orderType}</td>
