@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import './Transaction.css'
+import './TransactionHistory.css'
 
 import Table from 'react-bootstrap/Table'
 
