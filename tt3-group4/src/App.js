@@ -1,4 +1,5 @@
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import TransactionHistory from './components/transactionHistory/TransactionHistory'
 
 function App() {
