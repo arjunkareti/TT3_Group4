@@ -25,7 +25,7 @@ const Navbar = () => {
       </div>
       <ul className="navbar-nav justify-content-end">
         <li className="nav-item">
-          <NavLink className="nav-link" activeClassName="active" to = "/Components/Logout/Logout">Logout</NavLink>
+          <NavLink className="nav-link" activeClassName="active" to = "/Logout">Logout</NavLink>
         </li>
       </ul>
     </nav>

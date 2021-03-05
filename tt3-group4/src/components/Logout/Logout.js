@@ -15,8 +15,8 @@ export default class PersonDelete extends React.Component {
         return (
         <form onSubmit={this.handleSubmit}>
             
-                <h1>Logout</h1>
-                <button type="submit">Login Page</button>
+                <h1>Successfully logged out</h1>
+                <button type="button" class="btn btn-secondary btn-lg">Login</button>
             
         </form>
         ) 
