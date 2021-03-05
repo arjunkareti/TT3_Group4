@@ -36,7 +36,7 @@ class ViewCurrentPrice extends React.Component{
     }
     
     //no request body (JSON) needed
-    handleOnViewPrice(acctKey, orderType, assetAmount){
+    handleOnViewPrice(){
         const xApiKey = 'mcOtxKkyOR4OwrbGK0Czq8HRmlMcsQ2G1Er2jfy7'
         //const accountKey = acctKey //'58cf2a3d-4e73-48c6-a7d1-437e8d70e181'
         const axiosConfig = {
@@ -45,11 +45,6 @@ class ViewCurrentPrice extends React.Component{
         }
         }
         const body = {
-            /*
-        'accountKey': accountKey,
-        'orderType': orderType,
-        'assetAmount': assetAmount
-        */
         }
     
         axios.post('https://849rs099m3.execute-api.ap-southeast-1.amazonaws.com/techtrek/pricing/current', body, axiosConfig)
@@ -74,9 +69,7 @@ class ViewCurrentPrice extends React.Component{
         return (
             <div>
                 assetSymbol === "" ?
-                <h3> Updating... Please wait...</h3>
-                :
-                <h1>Current Price</h1>
+
 
                 <p>Time Done: {this.state.timestamp}</p>//
                 <p>Asset Symbol: {this.state.assetSymbol}</p>//
