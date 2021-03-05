@@ -46,12 +46,10 @@ const TransactionHistory = props => {
         </thead>
         <tbody>
           { transactionHistory.map( transaction => {
-            const date = new Date()
             return (
               <tr key={transaction.transactionId}>
                 <td>{transaction.transactionId}</td>
-                {/* <td>{transaction.timestamp}</td> */}
-                <td>{date}</td>
+                <td>{transaction.timestamp}</td>
                 <td>{transaction.assetSymbol}</td>
                 <td>{transaction.orderType}</td>
                 <td>{transaction.assetAmount}</td>
