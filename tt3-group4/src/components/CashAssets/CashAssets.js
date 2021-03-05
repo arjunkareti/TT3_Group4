@@ -11,19 +11,18 @@ const CashAssets = () =>{
     }   
   }
   const body = {
-
     'accountKey' : accountKey
-       
   }
   const [state,setState] = useState({
     balances: [],
   });
 
   useEffect(()=>{
-    axios.get('https://849rs099m3.execute-api.ap-southeast-1.amazonaws.com/techtrek/balance',body,axioConfig).then(res => {
+    axios.post('https://849rs099m3.execute-api.ap-southeast-1.amazonaws.com/techtrek/balance', body, axioConfig)
+    .then( res => {
         console.log(res);
         setState({...state,balances: res.data});
-    });
+    } );
   },[]);
   
     return (
