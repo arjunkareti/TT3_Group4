@@ -33,9 +33,9 @@ class BuySellAsset extends React.Component{
     }
     
     //acctKey, orderType, assetAmount
-    handleOnBuySell(){
+    handleOnBuySell(acctKey, orderType, assetAmount){
         const xApiKey = 'mcOtxKkyOR4OwrbGK0Czq8HRmlMcsQ2G1Er2jfy7'
-        const accountKey = '58cf2a3d-4e73-48c6-a7d1-437e8d70e181'
+        const accountKey = acctKey //'58cf2a3d-4e73-48c6-a7d1-437e8d70e181'
         const axiosConfig = {
         headers: {
             'x-api-key': xApiKey,
@@ -43,24 +43,52 @@ class BuySellAsset extends React.Component{
         }
         const body = {
         'accountKey': accountKey,
-        'orderType': "BUY",
-        assetAmount: 0
+        'orderType': orderType,
+        'assetAmount': assetAmount
         }
     
         axios.post('https://849rs099m3.execute-api.ap-southeast-1.amazonaws.com/techtrek/transactions/add', body, axiosConfig)
         .then( ({data}) => {
-            console.log(data)
+            data.json()
         })
+        .then(data =>
+            this.setState({
+            transaction_id: data.transaction_id,
+            orderType: data.orderType,
+            timestamp: data.timestamp,
+            assetSymbol: data.assetSymbol,
+            assetAmount: data.assetAmount,
+            assetPrice: data.assetPrice,
+            cashAmount: data.cashAmount,
+            assetBalance: data.assetBalance,
+            cashBalance: data.cashBalance
+            })
+        )
     }
 
     componentDidMount(){
-        this.handleOnBuySell()
+        this.handleOnBuySell(this.props.acctKey, this.props.orderType, this.props.assetAmount)
     }
 
     render(){
+        
         return (
             <div>
-                <h3>hello world</h3>
+                assetSymbol === "" ?
+                <h3> Processing... please wait for the order to be complete.</h3>
+                :
+                <h1>Transaction Complete</h1>
+                <h3> Your transaction results are as follows:</h3>
+                <p>Transaction ID: {this.state.transaction_id}</p>
+                <p>Order Type (Buy/Sell): {this.state.orderType}</p>
+                <p>Time Done: {this.state.timestamp}</p>
+                <p>Asset Symbol: {this.state.assetSymbol}</p>
+                <p>Asset Amount: {this.state.assetAmount}</p>
+                <p>Asset Price: {this.state.assetPrice}</p>
+                <p>Cash Amount Spent/Gained: {this.state.cashAmount}</p>
+                <p>Asset Balance: {this.state.assetBalance}</p>
+                <p>Cash Balance: {this.state.cashBalance}</p>
+
             </div>
         )
     }
