@@ -31,6 +31,7 @@ const TransactionHistory = props => {
 
   return (
     <div className="transactionContainer">
+      <h1>Transaction History</h1>
       <Table striped bordered hover >
         <thead>
           <tr>
@@ -40,15 +41,17 @@ const TransactionHistory = props => {
             <th>Order Type</th>
             <th>Asset Amount</th>
             <th>Asset Price</th>
-            <th>Cash Amount</th>
+            <th>Cash Amount (SGD$)</th>
           </tr>
         </thead>
         <tbody>
           { transactionHistory.map( transaction => {
+            const date = new Date()
             return (
               <tr key={transaction.transactionId}>
                 <td>{transaction.transactionId}</td>
-                <td>{transaction.timestamp}</td>
+                {/* <td>{transaction.timestamp}</td> */}
+                <td>{date}</td>
                 <td>{transaction.assetSymbol}</td>
                 <td>{transaction.orderType}</td>
                 <td>{transaction.assetAmount}</td>
