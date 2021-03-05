@@ -20,10 +20,6 @@ function App() {
           <Route  exact path="/TransactionHistory" component={TransactionHistory}></Route>
           <Route  exact path="/Logout" component={Logout}></Route>
           <Route  exact path="/" component={UserInfor}></Route>
-          <Route  exact path="/Components/CashAssets/CashAssets" component={CashAssets}></Route>
-          <Route  exact path="/Components/TransactionHistory/TransactionHistory" component={TransactionHistory}></Route>
-          <Route  exact path="/Components/ViewCurrentPrice/ViewCurrentPrice" component={ViewCurrentPrice}></Route>
-          <Route  exact path="/Components/Logout/Logout" component={Logout}></Route>
         </Switch>
       </div>
     </Router>
