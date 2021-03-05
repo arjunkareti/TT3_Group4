@@ -21,7 +21,7 @@
 import React from "react"
 import axios from "axios"
 
-class BuySellAsset extends React.Component{
+class ViewCurrentPrice extends React.Component{
     
     constructor(){
         super()
@@ -30,7 +30,6 @@ class BuySellAsset extends React.Component{
             timestamp: new Date(0), //epoch
             assetSymbol: "", //string
             assetPrice: 0, //float
-            cashBalance: 0 //float
 
         }
         this.handleOnViewPrice = this.handleOnViewPrice.bind(this)
@@ -62,7 +61,6 @@ class BuySellAsset extends React.Component{
             assetSymbol: data.assetSymbol,
             timestamp: data.timestamp,
             assetPrice: data.assetPrice,
-            cashBalance: data.cashBalance
             })
         )
     }
@@ -83,7 +81,6 @@ class BuySellAsset extends React.Component{
                 <p>Time Done: {this.state.timestamp}</p>//
                 <p>Asset Symbol: {this.state.assetSymbol}</p>//
                 <p>Asset Price: {this.state.assetPrice}</p>
-                <p>Cash Balance: {this.state.cashBalance}</p>
 
             </div>
         )
