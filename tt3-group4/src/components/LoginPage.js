@@ -12,9 +12,12 @@ export default class LoginPage extends Component{
             password: this.password
         }
 
-        playerDatabase.push(data);
-
-        console.log(data);
+        playerDatabase.forEach(element => {
+          if( (element.email === data.email) && (element.password === data.password) )
+          {
+            console.log("Match");
+          }
+        })
 
         axios.post('http://localhost:8000/login', data)
         .then(res =>{
