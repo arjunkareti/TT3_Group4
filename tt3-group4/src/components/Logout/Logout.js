@@ -19,7 +19,7 @@ export default class PersonDelete extends React.Component {
         <form onSubmit={this.handleSubmit}>
             
                 <h1>Successfully logged out</h1>
-                <button type="button" class="btn btn-secondary btn-lg"><NavLink className="nav-link" activeClassName="active" to = "/">Login</NavLink></button>
+                <button type="button" class="btn btn-secondary btn-lg"><NavLink className="nav-link" activeClassName="active" to = "/Login">Login</NavLink></button>
         </form>
         ) 
         
