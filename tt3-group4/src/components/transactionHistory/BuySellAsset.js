@@ -75,7 +75,7 @@ class BuySellAsset extends React.Component{
         return (
             <div>
                 <form onSubmit={this.handleOnBuySell}>
-                <input name="assetAmount" onChange={} placeholder="Enter amount here"></input>
+                <input name="assetAmount" placeholder="Enter amount here"></input>
                 <select>
                 <option value="default">---Choose An Option Below---</option>
                 <option value="Buy">Buy</option>
@@ -83,20 +83,21 @@ class BuySellAsset extends React.Component{
                 </select>
                 <button>Submit</button>
                 </form>
-                assetSymbol === "" ?
-                <h3> Processing... please wait for the order to be complete.</h3>
+                {this.state.assetSymbol === "" ?
+                null//<h3> Processing... please wait for the order to be complete.</h3>
                 :
+                <div>
                 <h1>Transaction Complete</h1>
                 <h3> Your transaction results are as follows:</h3>
                 <p>Transaction ID: {this.state.transaction_id}</p>
                 <p>Order Type (Buy/Sell): {this.state.orderType}</p>
-                <p>Time Done: {this.state.timestamp}</p>
+                <p>Time Done: {new Date(this.state.timestamp).toString()}</p>
                 <p>Asset Symbol: {this.state.assetSymbol}</p>
                 <p>Asset Amount: {this.state.assetAmount}</p>
                 <p>Asset Price: {this.state.assetPrice}</p>
                 <p>Cash Amount Spent/Gained: {this.state.cashAmount}</p>
                 <p>Asset Balance: {this.state.assetBalance}</p>
-                <p>Cash Balance: {this.state.cashBalance}</p>
+                <p>Cash Balance: {this.state.cashBalance}</p></div>}
 
             </div>
         )
