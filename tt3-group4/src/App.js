@@ -6,6 +6,7 @@ import {BrowserRouter as Router, NavLink,Link, Route, Switch } from 'react-route
 import TransactionHistory from './components/transactionHistory/TransactionHistory'
 import UserInfor from './components/UserInfor'
 import CashAssets from './components/CashAssets/CashAssets'
+import ViewCurrentPrice from './components/ViewCurrentPrice/ViewCurrentPrice'
 import Logout from './components/Logout/Logout'
 import NavBar from './components/NavBar'
 
@@ -19,6 +20,10 @@ function App() {
           <Route  exact path="/TransactionHistory" component={TransactionHistory}></Route>
           <Route  exact path="/Logout" component={Logout}></Route>
           <Route  exact path="/" component={UserInfor}></Route>
+          <Route  exact path="/Components/CashAssets/CashAssets" component={CashAssets}></Route>
+          <Route  exact path="/Components/TransactionHistory/TransactionHistory" component={TransactionHistory}></Route>
+          <Route  exact path="/Components/ViewCurrentPrice/ViewCurrentPrice" component={ViewCurrentPrice}></Route>
+          <Route  exact path="/Components/Logout/Logout" component={Logout}></Route>
         </Switch>
       </div>
     </Router>
