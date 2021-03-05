@@ -66,14 +66,23 @@ class BuySellAsset extends React.Component{
         )
     }
 
-    componentDidMount(){
-        this.handleOnBuySell(this.props.acctKey, this.props.orderType, this.props.assetAmount)
-    }
+    //componentDidMount(){
+    //    this.handleOnBuySell(this.props.acctKey, this.props.orderType, this.props.assetAmount)
+    //}
 
     render(){
         
         return (
             <div>
+                <form onSubmit={this.handleOnBuySell}>
+                <input name="assetAmount" onChange={} placeholder="Enter amount here"></input>
+                <select>
+                <option value="default">---Choose An Option Below---</option>
+                <option value="Buy">Buy</option>
+                <option value="Sell">Sell</option>
+                </select>
+                <button>Submit</button>
+                </form>
                 assetSymbol === "" ?
                 <h3> Processing... please wait for the order to be complete.</h3>
                 :
