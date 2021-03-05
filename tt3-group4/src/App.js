@@ -1,10 +1,10 @@
 import './App.css';
-import TransactionHistory from './components/transactionHistory/TransactionHistory'
+import ViewCurrentPrice from './components/transactionHistory/ViewCurrentPrice'
 
 function App() {
   return (
     <div className="App">
-      <TransactionHistory />
+      <ViewCurrentPrice />
     </div>
   );
 }
